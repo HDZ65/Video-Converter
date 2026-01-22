@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <span class="eyebrow">Stream-safe output</span>
+        <h1>Video Converter</h1>
+        <p class="lede">
+          Convert to MP4 H.264 Main@4.1 with AAC 128k 48k stereo and faststart.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div id="drop-zone" class="drop-zone" aria-label="File drop zone">
+          <div class="drop-content">
+            <p class="drop-title">Drop a video file here</p>
+            <p class="drop-subtitle">Or pick one from your device</p>
+            <label class="file-button" for="file-input">Choose file</label>
+            <input id="file-input" type="file" accept="video/*" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="convert-button" type="button" class="primary">Convert</button>
+          <p class="hint">Large files may take a few minutes.</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-row">
+            <span class="label">Status</span>
+            <span id="status" class="status">Idle</span>
+          </div>
+          <progress id="progress" max="100" value="0"></progress>
+          <div class="status-row">
+            <span class="label">Output</span>
+            <div class="output-links">
+              <div class="output-item">
+                <a id="download-link" href="#" download="converted.mp4" hidden>Download converted video</a>
+                <button id="copy-mp4" class="copy-button" type="button" hidden>Copy</button>
+              </div>
+              <div class="output-item">
+                <a id="hls-link" href="#" hidden>HLS playlist</a>
+                <button id="copy-hls" class="copy-button" type="button" hidden>Copy</button>
+              </div>
+              <div class="output-item">
+                <a id="dash-link" href="#" hidden>DASH manifest</a>
+                <button id="copy-dash" class="copy-button" type="button" hidden>Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
